@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Posture AI Trainer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Pantalla de Menú -->
+  <section id="menu" class="visible">
+    <h1>Posture AI Trainer</h1>
+    <p>Elige el ejercicio que deseas entrenar:</p>
+    <div class="buttons">
+      <button onclick="startExercise('sentadilla')">🦵 Sentadilla</button>
+      <button onclick="startExercise('plancha')">🧍 Plancha</button>
+      <button onclick="startExercise('pushup')">💪 Push-up</button>
+    </div>
+  </section>
+
+  <!-- Pantalla del análisis -->
+  <section id="app" class="hidden">
+    <header>
+      <h2 id="exercise-name">Ejercicio</h2>
+    </header>
+
+    <main>
+      <div class="video-container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="canvas"></canvas>
+      </div>
+      <div id="feedback">👀 Esperando postura...</div>
+    </main>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
